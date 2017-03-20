@@ -17,10 +17,9 @@ script:
     # launch tutorial
     - echo $MATLAB_VER;
     - echo $CI_PROJECT_NAME;
-    - if [ "$MATLAB_VER" == "R2016b" ]; then
-          if [ "$CI_PROJECT_NAME" == "COBRAToolbox-branches-auto" ] || [ "$CI_PROJECT_NAME" == "COBRAToolbox-branches-manual" ]; then
-              sh ./tutorials/runtutorials.sh;
-          fi;
+    - if [[ "$MATLAB_VER" == "R2016b" ]]; then
+          if [[ "$CI_PROJECT_NAME" == "COBRAToolbox-branches-auto" ]]; then sh ./tutorials/runtutorials.sh; fi;;
+          if [[ "$CI_PROJECT_NAME" == "COBRAToolbox-branches-manual" ]]; then sh ./tutorials/runtutorials.sh; fi;;
       fi;
 
 # after_success:
